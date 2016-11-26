@@ -1,0 +1,13 @@
+{
+  "name": "smiley-emoji-migration",
+  "devDependencies": {
+    "jasmine": "^2.5.2"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine"
+  },
+  "dependencies": {
+    "bower": "^1.8.0",
+    "emojione": "^2.2.6"
+  }
+}
