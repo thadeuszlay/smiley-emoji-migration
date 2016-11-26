@@ -17,6 +17,8 @@ before_install:
 
 install:
 - travis_retry composer install --no-interaction --prefer-dist
+- npm install
 
 script:
 - php vendor/phpunit/phpunit/phpunit
+- npm test
