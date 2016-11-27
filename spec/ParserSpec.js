@@ -52,4 +52,25 @@ describe("Parser", function() {
 		});
 	});
 
+	describe("shortnameToUnicode", function() {
+		var emojione = {};
+		emojione.emojioneList = {
+			":fischer:":{"isCanonical":false,"isSmiley":false,"unicode":["1f3a3"],"filename":""},
+			":heck:":{"isCanonical":false,"isSmiley":true,"unicode":[":heck:"],"filename":"heck.gif"},
+		};
+		emojione.convert = function(str) {
+			return 'unicode:'+str;
+		};
+
+		it("should parse :fischer: to unicode:1f3a3", function() {
+			expect(parser.shortnameToUnicode(emojione, ':fischer:'))
+				.toEqual('unicode:1f3a3');
+		});
+
+		it("should parse :heck: to :heck:", function() {
+			expect(parser.shortnameToUnicode(emojione, ':heck:'))
+				.toEqual(':heck:');
+		});
+	});
+
 });
