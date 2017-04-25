@@ -1,13 +1,15 @@
-if (typeof jQuery === 'undefined') {
-	throw new Error('jQuery.emojicomplete requires jQuery');
-}
+import $ from 'jquery';
+require('imports-loader?jQuery=jquery!jquery-textcomplete');
+import emojione from 'emojione';
+import Parser from './Parser.js';
+import Smileystore from './Smileystore.js';
 
-(function emojicomplete($, emojione, Parser, Smileystore) {
+(function EmojiComplete() {
 	'use strict';
 
 	emojione.emojioneList = $.extend(emojione.emojioneList, Smileystore.smileylist);
 
-	$.fn.emojicomplete = function (option) {
+	$.fn.emojicomplete = function (options) {
 		var default_options = {
 			maxCount: 10
 		};
@@ -19,9 +21,9 @@ if (typeof jQuery === 'undefined') {
 			}
 		};
 
-		var options = $.extend(default_options, option);
+		var settings = $.extend(default_options, options);
 
-		var textcomplete_shema = {
+		var textcomplete_schema = {
 			match: Parser.match_regex,
 			search: function (term, callback) {
 				console.log('suche nach '+term);
@@ -39,7 +41,7 @@ if (typeof jQuery === 'undefined') {
 			index: 1
 		};
 
-		return $.fn.textcomplete(textcomplete_shema, options);
+		return $.fn.textcomplete(textcomplete_schema, settings);
 	};
 
-}(jQuery, emojione, Parser, Smileystore));
+}());

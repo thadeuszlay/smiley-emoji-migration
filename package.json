@@ -3,13 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "emojione": "^2.2.6"
+    "babel-cli": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^3.5.0",
+    "emojione": "^2.2.7",
+    "jquery": "^3.2.1",
+    "jquery-textcomplete": "^1.8.0"
   },
   "devDependencies": {
-    "jasmine": "^2.5.2"
+    "mocha": "^3.3.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   },
   "scripts": {
-    "test:js": "jasmine JASMINE_CONFIG_PATH=js/spec/support/jasmine.json",
+    "test:js": "mocha --compilers js:babel-register --require babel-polyfill js/spec/",
     "test:php": "./php/vendor/bin/phpunit",
     "test": "npm run test:js && npm run test:php",
     "build": "./php/build_files.php"

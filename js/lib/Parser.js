@@ -33,7 +33,7 @@ var Parser = function()
 		return str.replace(/:?\+?[\w_\-]+:?/g, function(shortname) {
 			var unicode_obj = emojione.emojioneList[shortname];
 			if (unicode_obj) {
-				unicode = unicode_obj.unicode;
+				var unicode = unicode_obj.unicode;
 				if (unicode_obj.isSmiley === true) {
 					return unicode[unicode.length-1];
 				}
@@ -42,7 +42,6 @@ var Parser = function()
 			return unicode_obj;
 		});
 	};
-}
+};
 
-module.exports = Parser;
-var Parser = new Parser();
+export default Parser;

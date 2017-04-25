@@ -1,11 +1,9 @@
+var assert = require('assert');
+var expect = require('chai').expect;
+import Parser from '../lib/Parser.js';
+
 describe("Parser", function() {
-	var Parser = require('../lib/Parser');
-	var parser;
-
-	beforeEach(function() {
-		parser = new Parser();
-	});
-
+	var parser = new Parser;
 	describe("match_regex", function() {
 		var find_data = [
 			':',
@@ -18,7 +16,7 @@ describe("Parser", function() {
 
 		find_data.forEach(function(part) {
 			it("should find the term \""+part+"\"", function() {
-				expect(parser.match_regex.test(part)).toEqual(true);
+				expect(parser.match_regex.test(part)).to.equal(true);
 			});
 		});
 
@@ -30,7 +28,7 @@ describe("Parser", function() {
 
 		unfind_data.forEach(function(part) {
 			it("should not find the term \""+part+"\"", function() {
-				expect(parser.match_regex.test(part)).toEqual(false);
+				expect(parser.match_regex.test(part)).to.equal(false);
 			});
 		});
 	});
@@ -47,7 +45,7 @@ describe("Parser", function() {
 		data.forEach(function(part) {
 			it("should parse the template \""+part.template+"\"", function() {
 				expect(parser.parse_template(part.img, part.alt))
-					.toEqual(part.expected);
+					.to.equal(part.expected);
 			});
 		});
 	});
@@ -64,12 +62,12 @@ describe("Parser", function() {
 
 		it("should parse :fischer: to unicode:1f3a3", function() {
 			expect(parser.shortnameToUnicode(emojione, ':fischer:'))
-				.toEqual('unicode:1f3a3');
+				.to.equal('unicode:1f3a3');
 		});
 
 		it("should parse :heck: to :heck:", function() {
 			expect(parser.shortnameToUnicode(emojione, ':heck:'))
-				.toEqual(':heck:');
+				.to.equal(':heck:');
 		});
 	});
 
