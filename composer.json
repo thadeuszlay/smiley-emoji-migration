@@ -11,14 +11,17 @@
     "require-dev": {
         "phpunit/phpunit": "~5.6"
     },
+    "config": {
+        "vendor-dir": "php/vendor"
+    },
     "autoload": {
         "psr-4": {
-            "Youthweb\\SmileyEmojiMigration\\": "src"
+            "Youthweb\\SmileyEmojiMigration\\": "php/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Youthweb\\SmileyEmojiMigration\\Tests\\": "tests"
+            "Youthweb\\SmileyEmojiMigration\\Tests\\": "php/tests"
         }
     }
 }

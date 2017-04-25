@@ -53,6 +53,7 @@ function Smileystore() {
 Smileystore.prototype.smileylist = %s;
 
 module.exports = Smileystore;
+var Smileystore = new Smileystore();
 ';
 
 		$content = sprintf($module_template, $data);

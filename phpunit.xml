@@ -12,19 +12,19 @@
          stopOnError="false"
          stopOnIncomplete="false"
          stopOnSkipped="false"
-         bootstrap="vendor/autoload.php"
+         bootstrap="php/vendor/autoload.php"
 >
     <testsuites>
         <testsuite name="all">
-            <directory suffix="Test.php">tests/</directory>
+            <directory suffix="Test.php">php/tests/</directory>
         </testsuite>
     </testsuites>
 	<listeners>
-		<listener class="PhpunitListener" file="tests/PhpunitListener.php"></listener>
+		<listener class="PhpunitListener" file="php/tests/PhpunitListener.php"></listener>
 	</listeners>
     <filter>
         <whitelist>
-            <directory suffix=".php">src/</directory>
+            <directory suffix=".php">php/src/</directory>
         </whitelist>
     </filter>
 </phpunit>

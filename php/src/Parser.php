@@ -17,7 +17,7 @@ class Parser
 	 */
 	public function parseReadme()
 	{
-		$file_path = realpath(__DIR__) . \DIRECTORY_SEPARATOR . '..' . \DIRECTORY_SEPARATOR . 'README.md';
+		$file_path = realpath(__DIR__) . \DIRECTORY_SEPARATOR . '..' . \DIRECTORY_SEPARATOR . '..' . \DIRECTORY_SEPARATOR . 'README.md';
 
 		$content = file_get_contents($file_path);
 

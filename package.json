@@ -1,19 +1,17 @@
 {
   "name": "smiley-emoji-migration",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "emojione": "^2.2.6"
+  },
   "devDependencies": {
-    "grunt": "^1.0.0",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-watch": "^1.0.0",
     "jasmine": "^2.5.2"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jasmine",
-    "build": "grunt build"
-  },
-  "dependencies": {
-    "bower": "^1.8.0",
-    "emojione": "^2.2.6"
+    "test:js": "jasmine JASMINE_CONFIG_PATH=js/spec/support/jasmine.json",
+    "test:php": "./php/vendor/bin/phpunit",
+    "test": "npm run test:js && npm run test:php",
+    "build": "./php/build_files.php"
   }
 }
