@@ -17,13 +17,15 @@
   },
   "babel": {
     "presets": [
-      "es2015"
+      "env"
     ]
   },
+  "main":"dist/EmojiComplete.js",
   "scripts": {
     "test:js": "mocha --compilers js:babel-register --require babel-polyfill js/spec/",
     "test:php": "./php/vendor/bin/phpunit",
     "test": "npm run test:js && npm run test:php",
+    "build:js": "babel js/lib/ --out-dir dist/",
     "build": "./php/build_files.php"
   }
 }
