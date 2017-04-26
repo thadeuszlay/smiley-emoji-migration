@@ -20,5 +20,5 @@ install:
 - npm install
 
 script:
-- php vendor/phpunit/phpunit/phpunit
-- npm test
+- php php/vendor/bin/phpunit
+- npm run test:js
