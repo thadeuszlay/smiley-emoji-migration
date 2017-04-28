@@ -57,6 +57,6 @@ import Smileystore from './Smileystore.js';
 			index: 1
 		};
 
-		return $.fn.textcomplete(textcomplete_schema, textcomplete_settings);
+		return $.fn.textcomplete([textcomplete_schema], textcomplete_settings);
 	};
 }(jQuery));
