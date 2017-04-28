@@ -7,6 +7,10 @@ var Parser = function Parser() {
 	this.match_regex = /\B([:;]{1}[+\-\(\)\[\]\w_äöü]*)$/;
 
 	this.emoji_template = '<img alt="{alt}" class="emojione" src="{img}"/>';
+	this.smiley_template = '<img alt="{alt}" class="emojione" src="{img}"/>';
+
+	this.emojiPath = '';
+	this.smileyPath = '';
 
 	this.parse_template = function (img, alt) {
 		return this.emoji_template.replace('{img}', img).replace('{alt}', alt);
