@@ -43,7 +43,7 @@ describe("Parser", function() {
 		];
 
 		data.forEach(function(part) {
-			it("should parse the template \""+part.template+"\"", function() {
+			it("should parse the template", function() {
 				expect(parser.parse_template(part.img, part.alt))
 					.to.equal(part.expected);
 			});
