@@ -25,7 +25,8 @@
     "test:js": "mocha --compilers js:babel-register --require babel-polyfill js/spec/",
     "test:php": "./php/vendor/bin/phpunit",
     "test": "npm run test:js && npm run test:php",
+    "build:php": "./php/build_files.php",
     "build:js": "babel js/lib/ --out-dir dist/",
-    "build": "./php/build_files.php"
+    "build": "npm run build:php && npm run build:js"
   }
 }
